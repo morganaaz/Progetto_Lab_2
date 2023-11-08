@@ -1,18 +1,19 @@
 #ifndef PARTICLETYPE_HPP
 #define PARTICLETYPE_HPP
 
+#include <iostream>
+
 class ParticleType{
 
    public:
-    ParticleType(char name, double mass, int charge) : fName(name),
-                                     fMass(mass), fCharge(charge){}
-    char getName()const;
+    ParticleType(const char* name, const double mass, const int charge);
+    const char* getName()const;
     double getMass()const;
     int getCharge()const;
-    void Print();
+    virtual void Print()const;
 
     private:
-    char* const fName_;
+    const char* fName_;
     double const fMass_;
     int const fCharge_;
     
